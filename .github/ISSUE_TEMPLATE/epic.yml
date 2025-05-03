@@ -1,0 +1,38 @@
+name: EPIC
+description: Use this template to define an EPIC-level issue
+title: "[EPIC] "
+labels: ["epic"]
+projects: ["seemlesscode/4"]
+assignees: ["Tarek-Dinkespiler"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Objective
+        Describe the overall goal of this EPIC and what it will achieve.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What is the high-level purpose of this EPIC?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Tasks
+        Use the checklist below to outline the tasks involved.
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      description: Suggested tasks (use - [ ] for checkboxes)
+      value: |
+        - [ ] First task
+        - [ ] Second task
+        - [ ] ...
+    validations:
+      required: true

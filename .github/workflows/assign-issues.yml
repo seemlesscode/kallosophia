@@ -1,0 +1,15 @@
+name: Assign Issues Automatically
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign issue to yourself
+        uses: peter-evans/auto-assign@v2
+        with:
+          assignees: "Tarek-Dinkespiler"
