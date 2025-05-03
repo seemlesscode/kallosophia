@@ -11,26 +11,24 @@ Kallosophia is a culture quiz application focused on art. It allows users to tes
 ## Technologies
 
 - **Frontend**: Built with Next.js for a dynamic and responsive user interface.
-- **Backend**: API based on Node.js with Express, providing secure and scalable interactions.
-- **Database**: MongoDB for managing user accounts, quiz data, and results.
-- **Authentication**: JWT for secure login and session management.
-- **Deployment**: Hosted on GitHub Pages for frontend and Heroku or a similar service for backend.
+- **Backend**: GraphQL API with Apollo Server and Prisma, using Node.js and TypeScript.
+- **Database**: PostgreSQL for structured, relational data.
+- **Authentication**: JWT-based login and session management.
+- **Deployment**: Containerized via Docker and deployed to GCP (Google Kubernetes Engine).
 
 ## Monorepo Structure
 
 This project uses a monorepo structure (via `pnpm workspaces`) to manage multiple packages and apps:
 
 - `/apps/web`: Frontend (Next.js)
-- `/apps/api`: Backend (Node.js + Express)
+- `/apps/api`: Backend (GraphQL server)
 - `/packages/core`: Shared logic and models
--
 
 ## Infrastructure
 
 The infrastructure is managed as code and lives in the `infra/` directory. It includes:
 
 - Terraform for provisioning GCP resources (GKE, networking, IAM).
-
 - Kubernetes manifests (via Helm) for deploying the frontend and backend apps.
 - GitHub Actions for CI/CD automation, including image builds and cluster deployments.
 
