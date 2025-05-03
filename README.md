@@ -25,6 +25,18 @@ This project uses a monorepo structure (via `pnpm workspaces`) to manage multipl
 - `/packages/core`: Shared logic and models
 -
 
+## Infrastructure
+
+The infrastructure is managed as code and lives in the `infra/` directory. It includes:
+
+- Terraform for provisioning GCP resources (GKE, networking, IAM).
+
+- Kubernetes manifests (via Helm) for deploying the frontend and backend apps.
+
+- GitHub Actions for CI/CD automation, including image builds and cluster deployments.
+
+See infra/README.md for full details on the architecture and deployment plan.
+
 ## Getting Started
 
 To set up the project locally, follow these steps:
