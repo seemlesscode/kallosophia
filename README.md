@@ -35,7 +35,7 @@ The infrastructure is managed as code and lives in the `infra/` directory. It in
 
 - GitHub Actions for CI/CD automation, including image builds and cluster deployments.
 
-See infra/README.md for full details on the architecture and deployment plan.
+See `infra/README.md` for full details on the architecture and deployment plan.
 
 ## Getting Started
 
