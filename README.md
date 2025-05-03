@@ -32,10 +32,25 @@ The infrastructure is managed as code and lives in the `infra/` directory. It in
 - Terraform for provisioning GCP resources (GKE, networking, IAM).
 
 - Kubernetes manifests (via Helm) for deploying the frontend and backend apps.
-
 - GitHub Actions for CI/CD automation, including image builds and cluster deployments.
 
 See `infra/README.md` for full details on the architecture and deployment plan.
+
+## Observability
+
+To monitor and debug the platform effectively, the project uses an open-source observability stack:
+
+| Concern        | Tool            | Hosting            | Notes                                        |
+| -------------- | --------------- | ------------------ | -------------------------------------------- |
+| Metrics        | Prometheus      | Self-hosted in GKE | Kubernetes and app-level metrics             |
+| Logs           | Loki + Promtail | Self-hosted in GKE | Centralized logging, integrates with Grafana |
+| Dashboards     | Grafana         | Self-hosted in GKE | Visualizes logs + metrics in one place       |
+| Error Tracking | Sentry          | Sentry.io (cloud)  | Free tier available for personal use         |
+
+- **Grafana** serves as the unified UI for metrics and logs.
+- **Prometheus** scrapes app and system metrics.
+- **Loki + Promtail** aggregate logs from pods.
+- **Sentry** captures and categorizes runtime exceptions (frontend & backend).
 
 ## Getting Started
 
