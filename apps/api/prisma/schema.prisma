@@ -1,15 +1,39 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-  output   = "../generated/prisma"
-}
-
+// Define the database provider
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "darwin-arm64", "linux-arm64-openssl-1.1.x"]
+}
+
+enum Country {
+  FRANCE
+  ITALY
+  SPAIN
+  FLANDERS
+}
+
+enum Medium {
+  OIL_ON_CANVAS
+  OIL_ON_WOOD
+  OIL_ON_PLASTER
+  OIL_ON_PANNEL
+  TEMPERA_ON_CANVAS
+  MURAL
+  FRESCO
+}
+
+model Painting {
+  id        Int      @id @default(autoincrement())
+  country   Country  
+  title     String   
+  artist    String   
+  date      String   
+  location  String   
+  medium    Medium   
+  style     String  
+  imageUrl  String  
 }

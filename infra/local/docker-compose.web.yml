@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: ../..
+      dockerfile: apps/web/Dockerfile.dev
+    container_name: kallosophia-web
+    working_dir: /app/apps/web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../..:/app
+    env_file: .env.web
+    command: ["pnpm", "dev"]

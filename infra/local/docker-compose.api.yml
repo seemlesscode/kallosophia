@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:15
+    container_name: kallosophia-db
+    ports:
+      - "5432:5432"
+    env_file: .env.db
+    volumes:
+      - kallosophia-db-data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ../../
+      dockerfile: apps/api/Dockerfile.dev
+    container_name: kallosophia-api
+    ports:
+      - "4000:4000"
+    volumes:
+      - ../../apps/api:/app/apps/api
+      - ../../packages/core:/app/packages/core
+      - ../../node_modules:/app/node_modules
+    depends_on:
+      - db
+    env_file: .env.api
+    command: ["pnpm", "dev"]
+
+volumes:
+  kallosophia-db-data:
