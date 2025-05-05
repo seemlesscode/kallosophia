@@ -3,10 +3,10 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "docker compose -f infra/local/docker-compose.full.yml up --build",
+    "dev": "docker compose -f infra/local/docker-compose.yml up --build",
     "dev:api": "docker compose -f infra/local/docker-compose.api.yml up --build",
     "dev:web": "docker compose -f infra/local/docker-compose.web.yml up --build",
-    "down": "docker compose -f infra/local/docker-compose.full.yml down",
+    "down": "docker compose -f infra/local/docker-compose.yml down",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"

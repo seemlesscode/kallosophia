@@ -1,5 +1,6 @@
 services:
   web:
+    image: kallosophia-web:latest
     build:
       context: ../..
       dockerfile: apps/web/Dockerfile.dev
