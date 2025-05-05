@@ -4,14 +4,16 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 3000",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.8",
     "@repo/ui": "workspace:*",
+    "graphql": "^16.11.0",
     "next": "^13.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

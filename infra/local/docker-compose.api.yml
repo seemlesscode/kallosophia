@@ -5,6 +5,8 @@ services:
     ports:
       - "5432:5432"
     env_file: .env.db
+    networks:
+      - kallosophia
     volumes:
       - kallosophia-db-data:/var/lib/postgresql/data
 
@@ -18,12 +20,15 @@ services:
       - "4000:4000"
     volumes:
       - ../../apps/api:/app/apps/api
-      - ../../packages/core:/app/packages/core
-      - ../../node_modules:/app/node_modules
     depends_on:
       - db
     env_file: .env.api
     command: ["pnpm", "dev"]
+    networks:
+      - kallosophia
+
+networks:
+  kallosophia:
 
 volumes:
   kallosophia-db-data:

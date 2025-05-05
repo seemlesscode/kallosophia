@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import ApolloWrapper from "../lib/ApolloWrapper";
+
+import type { Metadata } from "next/types";
 
 export const metadata: Metadata = {
   title: "Kallosophia",
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>{children}</body>
+      <body>
+        <ApolloWrapper>{children}</ApolloWrapper>
+      </body>
     </html>
   );
 }

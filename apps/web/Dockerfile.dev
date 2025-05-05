@@ -8,6 +8,7 @@ WORKDIR /app
 # Copy project config
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY .npmrc ./
+COPY infra/local/.env.web .env.web
 
 # Install pnpm
 RUN npm install -g pnpm

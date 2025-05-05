@@ -1,9 +1,22 @@
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import { useQuery, gql } from "@apollo/client";
+
+const GET_APP_NAME = gql`
+  query GetAppName {
+    appName
+  }
+`;
+
+export default function HomePage() {
+  const { data, loading, error } = useQuery(GET_APP_NAME);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
-    <main className={styles.container}>
-      <h1>Kallosophia arrive bientôt</h1>
-    </main>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>{data.appName} arrive bientôt</h1>
+    </div>
   );
 }
