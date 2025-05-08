@@ -9,7 +9,7 @@ RUN apt-get update && apt-get upgrade -y && \
 WORKDIR /app
 
 # Copy only monorepo root files needed for dependency installation
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json ./
 
 # Copy the API workspace
 COPY ../../apps/api ./apps/api
