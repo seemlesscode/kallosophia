@@ -13,6 +13,14 @@ import { config as baseConfig } from "./base.js";
  * @type {import("eslint").Linter.Config[]}
  * */
 export const nextJsConfig = [
+  {
+    files: ["**/postcss.config.cjs", "**/tailwind.config.cjs"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
   ...baseConfig,
   js.configs.recommended,
   eslintConfigPrettier,

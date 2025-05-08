@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../styles/globals.css";
 import ApolloWrapper from "../lib/ApolloWrapper";
 
 import type { Metadata } from "next/types";

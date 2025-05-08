@@ -6,6 +6,7 @@
     "dev": "docker compose -f infra/local/docker-compose.yml up --build",
     "dev:api": "docker compose -f infra/local/docker-compose.api.yml up --build",
     "dev:web": "docker compose -f infra/local/docker-compose.web.yml up --build",
+    "dev:restart-web": "docker restart kallosophia-web",
     "down": "docker compose -f infra/local/docker-compose.yml down",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

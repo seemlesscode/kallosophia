@@ -1,7 +1,14 @@
 {
+  "css.validate": false,
+  "tailwindCSS.experimental.configFile": "apps/web/tailwind.config.js",
+
   "eslint.workingDirectories": [
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "eslint.enable": true,
+  "eslint.options": {
+    "configFile": "/path/to/your/eslint.config.js"
+  }
 }
