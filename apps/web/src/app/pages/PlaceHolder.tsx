@@ -1,7 +1,8 @@
 "use client";
 
-import { GET_APP_NAME } from "@/graphql/queries/getAppName";
 import { useQuery } from "@apollo/client";
+
+import { GET_APP_NAME } from "@graphql/queries/getAppName";
 
 export default function PlaceholderPage() {
   const { data, loading, error } = useQuery(GET_APP_NAME);

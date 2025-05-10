@@ -1,14 +1,20 @@
 import path from "path";
 import { fileURLToPath } from "url";
 
-/** Resolve __dirname in ESM */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config) => {
-    config.resolve.alias["@"] = path.resolve(__dirname);
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@": path.resolve(__dirname, "src"),
+      "@graphql": path.resolve(__dirname, "src/app/graphql"),
+      "@lib": path.resolve(__dirname, "src/app/lib"),
+      "@styles": path.resolve(__dirname, "src/app/styles"),
+      "@components": path.resolve(__dirname, "src/app/components"),
+      "@pages": path.resolve(__dirname, "src/app/pages"),
+    };
     return config;
   },
 };

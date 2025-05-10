@@ -1,7 +1,7 @@
-import "../styles/globals.css";
-import ApolloWrapper from "../lib/ApolloWrapper";
+import "@styles/globals.css";
 
 import type { Metadata } from "next/types";
+import ApolloWrapper from "@lib/ApolloWrapper";
 
 export const metadata: Metadata = {
   title: "Kallosophia",

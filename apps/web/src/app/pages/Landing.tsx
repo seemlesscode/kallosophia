@@ -1,8 +1,9 @@
 "use client";
 
-import { GET_APP_NAME } from "@/graphql/queries/getAppName";
 import { useQuery } from "@apollo/client";
-import MainLayout from "../components/layouts/MainLayout";
+
+import { GET_APP_NAME } from "@graphql/queries/getAppName";
+import MainLayout from "@components/layouts/MainLayout";
 
 export default function LandingPage() {
   const { data, loading, error } = useQuery(GET_APP_NAME);
@@ -17,10 +18,6 @@ export default function LandingPage() {
         <button className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">
           Play
         </button>
-
-        <div className="bg-red-500 text-white p-4">
-          If Tailwind works, this box should have a red background.
-        </div>
         <div className="mt-10 w-full"></div>
       </main>
     </MainLayout>
