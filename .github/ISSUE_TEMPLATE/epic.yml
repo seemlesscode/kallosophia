@@ -1,14 +1,14 @@
 name: EPIC
 description: Use this template to define an EPIC-level issue
 title: "[EPIC] "
-labels: ["epic"]
+labels: ["EPIC"]
 projects: ["seemlesscode/4"]
 assignees: ["Tarek-Dinkespiler"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Objective
+        ## Goal
         Describe the overall goal of this EPIC and what it will achieve.
 
   - type: textarea
