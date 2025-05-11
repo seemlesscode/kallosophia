@@ -13,12 +13,13 @@ export default function LandingPage() {
 
   return (
     <MainLayout>
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-6">{data.appName}</h1>
-        <button className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">
-          Play
-        </button>
-        <div className="mt-10 w-full"></div>
+      <main className="min-h-screen flex items-center justify-center text-center bg-[url('/images/botticelli_venus_bg.jpg')] bg-cover bg-no-repeat">
+        <div className="w-full flex justify-center items-center">
+          <button className="w-[200px] h-[200px] md:w-[700px] bg-[var(--color-background)] text-[var(--color-primary)] ds-text-landing border border-[var(--color-primary)] cursor-pointer">
+            <h1 className="block md:hidden">{data.appName[0]}</h1>
+            <h1 className="hidden md:block">{data.appName}</h1>
+          </button>
+        </div>
       </main>
     </MainLayout>
   );

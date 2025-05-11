@@ -1,26 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* colors */
+  --color-primary: #ddccaa;
+  --color-secondary: #77ccee;
+  --color-background: #ffffff;
+  --color-success: #d3efd3;
+  --color-error: #f9dada;
+  --color-text-main: #4f4f4f;
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #cccccc;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* fonts */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-title: "Playfair Display", serif;
+  --font-main: "Work Sans", serif;
+
+  /* landing */
+  --font-family-landing: var(--font-title);
+  --font-size-landing-mobile: 100px;
+  --font-size-landing-desktop: 100px;
+  --line-height-landing-mobile: 100px;
+  --line-height-landing-desktop: 100px;
+  --font-weight-landing: 400;
+
+  /* title */
+  --font-family-title: var(--font-title);
+  --font-size-title-mobile: 24px;
+  --font-size-title-desktop: 36px;
+  --line-height-title-mobile: 48px;
+  --line-height-title-desktop: 48px;
+  --font-weight-title: 700;
+
+  /* subtitle */
+  --font-family-subtitle: var(--font-main);
+  --font-size-subtitle-mobile: 18px;
+  --font-size-subtitle-desktop: 24px;
+  --line-height-subtitle-mobile: 36px;
+  --line-height-subtitle-desktop: 36px;
+  --font-weight-subtitle: 500;
+
+  /* body */
+  --font-family-body: var(--font-main);
+  --font-size-body-mobile: 16px;
+  --font-size-body-desktop: 16px;
+  --line-height-body-mobile: 24px;
+  --line-height-body-desktop: 24px;
+  --font-weight-body: 400;
+
+  /* score */
+  --font-family-score: var(--font-main);
+  --font-size-score-mobile: 36px;
+  --font-size-score-desktop: 72px;
+  --line-height-score-mobile: 36px;
+  --line-height-score-desktop: 72px;
+  --font-weight-score: 400;
+
+  /* question */
+  --font-family-question: var(--font-main);
+  --font-size-question-mobile: 24px;
+  --font-size-question-desktop: 36px;
+  --line-height-question-mobile: 36px;
+  --line-height-question-desktop: 48px;
+  --font-weight-question: 500;
+
+  /* answer */
+  --font-family-answer: var(--font-main);
+  --font-size-answer-mobile: 16px;
+  --font-size-answer-desktop: 24px;
+  --line-height-answer-mobile: 24px;
+  --line-height-answer-desktop: 36px;
+  --font-weight-answer: 400;
+
+  /* etc. */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-main);
+}
+
+.ds-text-landing {
+  font-size: var(--font-size-landing-mobile);
+  line-height: var(--line-height-landing-mobile);
+  font-family: var(--font-family-landing);
+  font-weight: var(--font-weight-landing);
+}
+
+@media (min-width: 768px) {
+  .ds-text-landing {
+    font-size: var(--font-size-landing-desktop);
+    line-height: var(--line-height-landing-desktop);
+  }
+}
+
+.ds-text-title {
+  font-size: var(--font-size-title-mobile);
+  line-height: var(--line-height-title-mobile);
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-title);
+}
+
+@media (min-width: 768px) {
+  .ds-text-title {
+    font-size: var(--font-size-title-desktop);
+    line-height: var(--line-height-title-desktop);
+  }
+}
+
+.ds-text-subtitle {
+  font-size: var(--font-size-subtitle-mobile);
+  line-height: var(--line-height-subtitle-mobile);
+  font-family: var(--font-family-subtitle);
+  font-weight: var(--font-weight-subtitle);
+}
+
+@media (min-width: 768px) {
+  .ds-text-subtitle {
+    font-size: var(--font-size-subtitle-desktop);
+    line-height: var(--line-height-subtitle-desktop);
+  }
+}
+
+.ds-text-body {
+  font-size: var(--font-size-body-mobile);
+  line-height: var(--line-height-body-mobile);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+}
+
+@media (min-width: 768px) {
+  .ds-text-body {
+    font-size: var(--font-size-body-desktop);
+    line-height: var(--line-height-body-desktop);
+  }
+}
+
+.ds-text-score {
+  font-size: var(--font-size-score-mobile);
+  line-height: var(--line-height-score-mobile);
+  font-family: var(--font-family-score);
+  font-weight: var(--font-weight-score);
+}
+
+@media (min-width: 768px) {
+  .ds-text-score {
+    font-size: var(--font-size-score-desktop);
+    line-height: var(--line-height-score-desktop);
+  }
+}
+
+.ds-text-question {
+  font-size: var(--font-size-question-mobile);
+  line-height: var(--line-height-question-mobile);
+  font-family: var(--font-family-question);
+  font-weight: var(--font-weight-question);
+}
+
+@media (min-width: 768px) {
+  .ds-text-question {
+    font-size: var(--font-size-question-desktop);
+    line-height: var(--line-height-question-desktop);
+  }
+}
+
+.ds-text-answer {
+  font-size: var(--font-size-answer-mobile);
+  line-height: var(--line-height-answer-mobile);
+  font-family: var(--font-family-answer);
+  font-weight: var(--font-weight-answer);
+}
+
+@media (min-width: 768px) {
+  .ds-text-answer {
+    font-size: var(--font-size-answer-desktop);
+    line-height: var(--line-height-answer-desktop);
+  }
 }

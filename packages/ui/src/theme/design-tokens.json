@@ -1,0 +1,86 @@
+{
+  "colors": {
+    "primary": "#DDCCAA",
+    "secondary": "#77CCEE",
+    "background": "#FFFFFF",
+    "success": "#D3EFD3",
+    "error": "#F9DADA",
+    "text-main": "#4F4F4F",
+    "text-dark": "#1A1A1A",
+    "text-light": "#CCCCCC"
+  },
+  "typography": {
+    "title": {
+      "fontFamily": "Playfair Display",
+      "fontSize": {
+        "mobile": "24px",
+        "desktop": "36px"
+      },
+      "lineHeight": {
+        "mobile": "48px",
+        "desktop": "48px"
+      },
+      "fontWeight": "700"
+    },
+    "subtitle": {
+      "fontFamily": "Work Sans",
+      "fontSize": {
+        "mobile": "18px",
+        "desktop": "24px"
+      },
+      "lineHeight": {
+        "mobile": "36px",
+        "desktop": "36px"
+      },
+      "fontWeight": "500"
+    },
+    "body": {
+      "fontFamily": "Work Sans",
+      "fontSize": {
+        "mobile": "16px",
+        "desktop": "16px"
+      },
+      "lineHeight": {
+        "mobile": "24px",
+        "desktop": "24px"
+      },
+      "fontWeight": "400"
+    },
+    "score": {
+      "fontFamily": "Work Sans",
+      "fontSize": {
+        "mobile": "36px",
+        "desktop": "72px"
+      },
+      "lineHeight": {
+        "mobile": "36px",
+        "desktop": "72px"
+      },
+      "fontWeight": "400"
+    },
+    "question": {
+      "fontFamily": "Work Sans",
+      "fontSize": {
+        "mobile": "24px",
+        "desktop": "36px"
+      },
+      "lineHeight": {
+        "mobile": "36px",
+        "desktop": "48px"
+      },
+      "fontWeight": "500"
+    },
+    "answer": {
+      "fontFamily": "Work Sans",
+      "fontSize": {
+        "mobile": "16px",
+        "desktop": "24px"
+      },
+      "lineHeight": {
+        "mobile": "24px",
+        "desktop": "36px"
+      },
+      "fontWeight": "400"
+    }
+  }
+}
