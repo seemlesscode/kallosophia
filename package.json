@@ -11,7 +11,8 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "cd apps/api && pnpm test"
   },
   "lint-staged": {
     "apps/api/**/*.{ts,js}": [
