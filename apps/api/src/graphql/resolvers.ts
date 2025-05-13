@@ -1,5 +1,5 @@
 export const resolvers = {
   Query: {
-    appName: () => "Kallosophia",
+    appName: () => 'Kallosophia',
   },
-};
+}
