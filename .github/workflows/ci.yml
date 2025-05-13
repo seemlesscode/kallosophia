@@ -9,39 +9,30 @@ on:
       - main
 
 jobs:
-  lint:
+  lint-and-test:
+    name: Lint and Test API
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run lint
+      - name: Lint
         run: pnpm lint
 
-  test:
-    runs-on: ubuntu-latest
-    needs: lint
-
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20"
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run tests
+      - name: Test
         run: pnpm test
